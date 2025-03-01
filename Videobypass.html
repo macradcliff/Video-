@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find and download copyright-free videos easily with our tool. Explore public domain videos and use them freely in your projects.">
+    <meta name="keywords" content="copyright-free videos, public domain videos, free video downloads, video tool">
+    <meta name="author" content="Your Company Name">
+    <title>Copyright-Free Video Finder Tool</title>
+    <style>
+        /* CSS for Styling and Responsiveness */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        #video-search {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        #search-query {
+            padding: 0.5rem;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        #search-button {
+            padding: 0.5rem 1rem;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #video-results {
+            margin-top: 2rem;
+        }
+
+        #results-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #search-query {
+                width: 100%;
+            }
+        }
+
+        /* Hyperlink Styling */
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML Structure -->
+    <header>
+        <h1>Copyright-Free Video Finder</h1>
+        <p>Discover and download videos you can use freely in your projects.</p>
+    </header>
+
+    <main>
+        <!-- Video Search Section -->
+        <section id="video-search">
+            <h2>Search for Videos</h2>
+            <input type="text" id="search-query" placeholder="Enter keywords...">
+            <button id="search-button">Search</button>
+        </section>
+
+        <!-- Video Results Section -->
+        <section id="video-results">
+            <h2>Results</h2>
+            <div id="results-container"></div>
+        </section>
+
+        <!-- Advertisement Section -->
+        <section id="advertisement">
+            <h2>Support Us</h2>
+            <!-- Google AdSense Ad Unit -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_UNIT_ID"
+                    crossorigin="anonymous"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_AD_UNIT_ID"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 <a href="https://yourwebsite.com" target="_blank">Your Company Name</a>. All rights reserved.</p>
+        <p><a href="#privacy-policy">Privacy Policy</a> | <a href="#terms-of-service">Terms of Service</a></p>
+    </footer>
+
+    <!-- JavaScript for Dynamic Functionality -->
+    <script>
+        // Add event listener to the search button
+        document.getElementById('search-button').addEventListener('click', function() {
+            const query = document.getElementById('search-query').value;
+            if (query) {
+                searchVideos(query);
+            }
+        });
+
+        // Mock function to simulate video search
+        function searchVideos(query) {
+            // Replace with actual API call to a public domain video repository
+            const mockResults = [
+                { title: "Nature Scene", url: "https://example.com/video1.mp4" },
+                { title: "City Time-lapse", url: "https://example.com/video2.mp4" }
+            ];
+
+            const resultsContainer = document.getElementById('results-container');
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            // Display mock results
+            mockResults.forEach(video => {
+                const videoElement = document.createElement('div');
+                videoElement.innerHTML = `
+                    <h3>${video.title}</h3>
+                    <video controls width="100%">
+                        <source src="${video.url}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="${video.url}" download>Download</a>
+                `;
+                resultsContainer.appendChild(videoElement);
+            });
+        }
+    </script>
+</body>
+</html>
